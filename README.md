@@ -59,7 +59,7 @@ Before you begin, ensure you have the following installed on your local machine:
     cd server
     ```
 
-2. Install the client dependencies:
+2. Install the server dependencies:
 
     ```bash
     npm install
