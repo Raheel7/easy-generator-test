@@ -1,16 +1,19 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
+import { ClipLoader } from 'react-spinners';
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); 
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
   const authContext = useContext(AuthContext);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const response = await fetch('http://localhost:3001/api/auth/signin', {
@@ -28,6 +31,9 @@ const SignIn: React.FC = () => {
       }
     } catch (error) {
         setError('Sign in failed');
+    }
+    finally {
+      setLoading(false);
     }
   };
 
@@ -56,8 +62,8 @@ const SignIn: React.FC = () => {
             required
           />
         </div>
-        <button type="submit" className="w-full p-2 mt-4 font-semibold bg-blue-500 text-white rounded">
-          Sign In
+        <button type="submit" className="w-full p-2 mt-4 font-semibold bg-blue-500 text-white rounded" disabled={loading}>
+        {loading ? <ClipLoader size={24} color="#ffffff" /> : 'Sign In'}
         </button>
         <div className=' mt-5 text-center '>
        <h1>Don't have an account?<span onClick={()=>navigate('/sign-up')} className=' ml-1 font-bold underline cursor-pointer'>Register</span></h1>

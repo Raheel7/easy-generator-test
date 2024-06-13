@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed on your local machine:
 
     ```bash
     git clone https://github.com/Raheel7/easy-generator-test.git
-    cd easy-generator-test/server
+    cd easy-generator-test
     ```
 
 
@@ -39,7 +39,7 @@ Before you begin, ensure you have the following installed on your local machine:
 1. Navigate to the client directory:
 
     ```bash
-    cd ../client
+    cd client
     ```
 
 2. Install the client dependencies:
@@ -59,7 +59,13 @@ Before you begin, ensure you have the following installed on your local machine:
     cd server
     ```
 
-2. Start the server:
+2. Install the client dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Start the server:
 
     ```bash
     npm run start
