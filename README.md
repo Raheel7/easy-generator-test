@@ -1,4 +1,4 @@
-# Full-Stack Application with React and NestJS
+# Easy Generator test Application with React and NestJS
 
 This project is a full-stack web application that includes user authentication with JWT. The front-end is built with React and TypeScript, using Tailwind CSS for styling. The back-end is built with NestJS and MongoDB, using Mongoose as the ORM.
 
@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed on your local machine:
 
     ```bash
     git clone https://github.com/Raheel7/easy-generator-test.git
-    cd your-repo-url/server
+    cd easy-generator-test/server
     ```
 
 2. Install the server dependencies:
