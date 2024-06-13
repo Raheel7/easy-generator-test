@@ -20,7 +20,8 @@ exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [config_1.ConfigModule.forRoot({
                 isGlobal: true,
-            }), mongoose_1.MongooseModule.forRoot('mongodb+srv://raheelsajjad100:C2qOi5V1cn4F9gS2@cluster0.w81xced.mongodb.net/'), auth_module_1.AuthModule],
+                envFilePath: './.env'
+            }), mongoose_1.MongooseModule.forRoot(process.env.MONGO_URI), auth_module_1.AuthModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

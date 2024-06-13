@@ -13,6 +13,7 @@ export class AuthService {
   ) {}
 
   async signUp(email: string, name: string, password: string): Promise<{ access_token: string }> {
+
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new this.userModel({ email, name, password: hashedPassword });

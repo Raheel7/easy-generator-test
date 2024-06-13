@@ -24,6 +24,7 @@ let AuthService = class AuthService {
         this.jwtService = jwtService;
     }
     async signUp(email, name, password) {
+        console.log("process.env.MONGO_URI", process.env.MONGO_URI);
         try {
             const hashedPassword = await bcrypt.hash(password, 10);
             const newUser = new this.userModel({ email, name, password: hashedPassword });
@@ -39,6 +40,7 @@ let AuthService = class AuthService {
         }
     }
     async signIn(email, password) {
+        console.log("process.env.JWT_SECRET", process.env.JWT_SECRET);
         const user = await this.userModel.findOne({ email });
         if (!user) {
             throw new common_1.UnauthorizedException('Invalid credentials');
