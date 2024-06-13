@@ -33,12 +33,6 @@ Before you begin, ensure you have the following installed on your local machine:
     cd easy-generator-test/server
     ```
 
-2. Install the server dependencies:
-
-    ```bash
-    npm install
-    ```
-
 
 ### Client
 
