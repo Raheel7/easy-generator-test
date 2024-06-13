@@ -59,7 +59,7 @@ const SignUp: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form onSubmit={handleSignUp} className="p-6 bg-white rounded w-[30%] shadow-md">
-        <h1 className="mb-4 text-xl">Sign Up</h1>
+        <h1 className="mb-4 text-xl font-bold">Sign Up</h1>
         {error && <div className="mb-4 text-red-600">{error}</div>}
         <div className="mb-4">
           <label className="block mb-1">Email</label>
